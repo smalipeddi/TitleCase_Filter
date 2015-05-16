@@ -3,10 +3,18 @@
 
   <head>
     <script data-require="jquery@*" data-semver="2.1.4" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <link src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
     <script>
-angular.module('MyApp', []).filter('titlecase', function() {
-  return function(input){
+    angular.module('MyApp', []).filter('titlecase', function() {
+    return function(input){
     var output=" ";
     var words = input.split(" ");
     var toUp = false;
@@ -26,24 +34,33 @@ angular.module('MyApp', []).filter('titlecase', function() {
             output = output + input[i].toUpperCase();
             toUp = false;
           }
-
-
       }
-
     return output;
   
 }});
- 
- 
     </script>
   </head>
-
   <body>
-    <input type="text" ng-model="text" placeholder="Enter text" />
-    <p>Input: {{text}}</p>
-    <p> {{text|titlecase}}</p>
-    <h1> </h1>
+
+<div class="container">
+  <div class="jumbotron">
+    <h1>Title Case</h1>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">     </div>
+    <div class="col-sm-6">
+      <h3>Please enter an input string</h3>
+      <br/>
+      <input type="text" ng-model="text" placeholder="Enter text" /><br/>
     
+      <label> Title Case : </label>  <p> {{text|titlecase}}</p>
+
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+
+</body>
+
 
 <div></div>
 
