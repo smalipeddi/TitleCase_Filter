@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html ng-app="MyApp">
+
+  <head>
+    <script data-require="jquery@*" data-semver="2.1.4" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.js"></script>
+    <script>
+angular.module('MyApp', []).filter('titlecase', function() {
+  return function(input){
+    var output=" ";
+    var words = input.split(" ");
+    var toUp = false;
+    output = input[0].toUpperCase();
+
+    for(var i = 1;i<input.length; i++)
+      {
+          if(input[i]!= " " &&  toUp == false){
+            output = output+ input[i].toLowerCase();
+          }
+          if(input[i]== " "){
+          toUp = true;
+          output = output+ input[i]
+          
+          }
+          if(input[i]!= " "   && toUp == true){
+            output = output + input[i].toUpperCase();
+            toUp = false;
+          }
+
+
+      }
+
+    return output;
+  
+}});
+ 
+ 
+    </script>
+  </head>
+
+  <body>
+    <input type="text" ng-model="text" placeholder="Enter text" />
+    <p>Input: {{text}}</p>
+    <p> {{text|titlecase}}</p>
+    <h1> </h1>
+    
+
+<div></div>
+
+  </body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
